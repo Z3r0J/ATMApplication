@@ -6,7 +6,8 @@ namespace ATMApplication
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            PrincipalMenu principalMenu = new PrincipalMenu();
+            principalMenu.PrintMenu();
         }
     }
 }
