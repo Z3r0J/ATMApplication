@@ -31,6 +31,7 @@ namespace ATMApplication
                     method = new Mode200and1000();
                     break;
                 case (int)ModelEnum.Mode500and100:
+                    method = new Mode500and100();
                     break;
                 default:
                     break;
