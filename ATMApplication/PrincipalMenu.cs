@@ -26,6 +26,9 @@ namespace ATMApplication
                         model.ModeDispensing(model);
                         break;
                     case (int)InitialMenu.Exit:
+                        Console.WriteLine("Muchas gracias por usar nuestra aplicacion.");
+                        Console.ReadKey();
+                        Environment.Exit(0);
                         break;
                     default:
                         break;

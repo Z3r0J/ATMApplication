@@ -42,6 +42,8 @@ namespace ATMApplication
                             if (divideMoney[1].Length > 1)
                             {
                                 Console.WriteLine("No puede insertar esta cantidad.");
+                                Console.ReadKey();
+                                Repositorio.instacia.menu.PrintMenu();
                             }
                             else
                             {
