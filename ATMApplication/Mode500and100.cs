@@ -6,16 +6,19 @@ namespace ATMApplication
 {
     public class Mode500and100 : ModelClass, IMethodMode
     {
+        ModelClass model = new ModelClass();
+        MetodosRetiros metodosRetiros = new MetodosRetiros();
         public void Withdraw()
         {
             try
             {
+                model.Mode = 3;
                 Console.WriteLine("Insert the amount to Withdraw");
                 Money = Convert.ToInt32(Console.ReadLine());
 
                 if (Money < 100)
                 {
-                    Console.Write("Solo aceptamos retiro de papeleta de 100 en adelante");
+                    Console.Write("Solo aceptamos retiro de papeleta de 100 y de 500");
                     Console.ReadKey();
                     Repositorio.instacia.menu.PrintMenu();
                 }
@@ -28,66 +31,43 @@ namespace ATMApplication
                     UnityFiveHundred = Convert.ToInt32(divideMoney[0]);
                     UnityHundred = Convert.ToInt32(divideMoney[1]);
                 }
-                else
+                if (UnityHundred%2==1 || UnityHundred.ToString().Length > 1)
                 {
-                    UnityFiveHundred = Convert.ToInt32(Total);
-                    UnityHundred = 0;
-                }
-
-                if (UnityFiveHundred > 0 && UnityHundred == 0)
-                {
-                    Console.WriteLine($"Se te dio {UnityFiveHundred} papeleta de 500");
-                    Console.WriteLine("¿Quieres seguir retirando? (S/N)");
-                    char answer = Convert.ToChar(Console.ReadLine());
-                    if (answer == 'S' || answer == 's')
-                    {
-                        Withdraw();
-                    }
-                    else
-                    {
-                        Console.WriteLine("Presiona Enter para volver atras.");
-                        Console.ReadKey();
-                        Console.Clear();
-                        Repositorio.instacia.menu.PrintMenu();
-                    }
-                }
-
-                else if (UnityHundred % 2 == 0 && UnityFiveHundred > 0)
-                {
-                    Console.WriteLine($"Se te dio {UnityFiveHundred} papeleta de 500 y {UnityHundred / 2} papeleta de 100 ");
-                    Console.WriteLine("¿Quieres seguir retirando? (S/N)");
-                    char answer = Convert.ToChar(Console.ReadLine());
-                    if (answer == 'S')
-                    {
-                        Withdraw();
-                    }
-                    else
-                    {
-                        Console.Clear();
-                        Repositorio.instacia.menu.PrintMenu();
-                    }
-                }
-
-                else if (UnityFiveHundred == 0 && UnityHundred % 2 == 0)
-                {
-                    Console.WriteLine($"Se te dio {UnityHundred / 2} papeleta de 100 ");
-                    Console.WriteLine("¿Quieres seguir retirando? (S/N)");
-                    char answer = Convert.ToChar(Console.ReadLine());
-                    if (answer == 's' || answer == 'S')
-                    {
-                        Withdraw();
-                    }
-                    else
-                    {
-                        Console.Clear();
-                        Repositorio.instacia.menu.PrintMenu();
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("No se puede dar de esta cantidad solo papeleta de 500 y 100");
+                    Console.WriteLine("Solo se admiten papeletas de 100 y 500");
                     Console.ReadKey();
                     Repositorio.instacia.menu.PrintMenu();
+                }
+                else {
+
+                    if (UnityFiveHundred > 0 && UnityHundred == 0)
+                    {
+                        model.UnityFiveHundred = UnityFiveHundred;
+                        model.UnityHundred = UnityHundred/2;
+                        Console.WriteLine(metodosRetiros.MensajeFinal(model));
+                        metodosRetiros.SeguirRetirando();
+                    }
+
+                    else if (UnityHundred % 2 == 0 && UnityFiveHundred > 0)
+                    {
+                        model.UnityFiveHundred = UnityFiveHundred;
+                        model.UnityHundred = UnityHundred/2;
+                        Console.WriteLine(metodosRetiros.MensajeFinal(model));
+                        metodosRetiros.SeguirRetirando();
+                    }
+
+                    else if (UnityFiveHundred == 0 && UnityHundred % 2 == 0)
+                    {
+                        model.UnityFiveHundred = UnityFiveHundred;
+                        model.UnityHundred = UnityHundred/2;
+                        Console.WriteLine(metodosRetiros.MensajeFinal(model));
+                        metodosRetiros.SeguirRetirando();
+                    }
+                    else
+                    {
+                        Console.WriteLine("No se puede dar de esta cantidad solo papeleta de 500 y 100");
+                        Console.ReadKey();
+                        Repositorio.instacia.menu.PrintMenu();
+                    }
                 }
             }
             catch (Exception)
