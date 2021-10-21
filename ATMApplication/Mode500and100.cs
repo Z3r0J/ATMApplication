@@ -15,7 +15,7 @@ namespace ATMApplication
 
                 if (Money < 100)
                 {
-                    Console.Write("Actualmente no aceptamos esta cantidad");
+                    Console.Write("Solo aceptamos retiro de papeleta de 100 en adelante");
                     Console.ReadKey();
                     Repositorio.instacia.menu.PrintMenu();
                 }
@@ -25,18 +25,36 @@ namespace ATMApplication
                 if (Total.ToString().Contains('.'))
                 {
                     string[] divideMoney = Total.ToString().Split('.');
-                    UnityMil = Convert.ToInt32(divideMoney[0]);
-                    UnityCentena = Convert.ToInt32(divideMoney[1]);
+                    UnityFiveHundred = Convert.ToInt32(divideMoney[0]);
+                    UnityHundred = Convert.ToInt32(divideMoney[1]);
                 }
                 else
                 {
-                    UnityMil = Convert.ToInt32(Total);
-                    UnityCentena = 0;
+                    UnityFiveHundred = Convert.ToInt32(Total);
+                    UnityHundred = 0;
                 }
 
-                if (UnityMil > 0 && UnityCentena == 0)
+                if (UnityFiveHundred > 0 && UnityHundred == 0)
                 {
-                    Console.WriteLine($"Se te dio {UnityMil} papeleta de 500");
+                    Console.WriteLine($"Se te dio {UnityFiveHundred} papeleta de 500");
+                    Console.WriteLine("¿Quieres seguir retirando? (S/N)");
+                    char answer = Convert.ToChar(Console.ReadLine());
+                    if (answer == 'S' || answer == 's')
+                    {
+                        Withdraw();
+                    }
+                    else
+                    {
+                        Console.WriteLine("Presiona Enter para volver atras.");
+                        Console.ReadKey();
+                        Console.Clear();
+                        Repositorio.instacia.menu.PrintMenu();
+                    }
+                }
+
+                else if (UnityHundred % 2 == 0 && UnityFiveHundred > 0)
+                {
+                    Console.WriteLine($"Se te dio {UnityFiveHundred} papeleta de 500 y {UnityHundred / 2} papeleta de 100 ");
                     Console.WriteLine("¿Quieres seguir retirando? (S/N)");
                     char answer = Convert.ToChar(Console.ReadLine());
                     if (answer == 'S')
@@ -50,25 +68,9 @@ namespace ATMApplication
                     }
                 }
 
-                else if (UnityCentena % 2 == 0 && UnityMil > 0)
+                else if (UnityFiveHundred == 0 && UnityHundred % 2 == 0)
                 {
-                    Console.WriteLine($"Se te dio {UnityMil} papeleta de 500 y {UnityCentena / 2} papeleta de 100 ");
-                    Console.WriteLine("¿Quieres seguir retirando? (S/N)");
-                    char answer = Convert.ToChar(Console.ReadLine());
-                    if (answer == 'S')
-                    {
-                        Withdraw();
-                    }
-                    else
-                    {
-                        Console.Clear();
-                        Repositorio.instacia.menu.PrintMenu();
-                    }
-                }
-
-                else if (UnityMil == 0 && UnityCentena % 2 == 0)
-                {
-                    Console.WriteLine($"Se te dio {UnityCentena / 2} papeleta de 100 ");
+                    Console.WriteLine($"Se te dio {UnityHundred / 2} papeleta de 100 ");
                     Console.WriteLine("¿Quieres seguir retirando? (S/N)");
                     char answer = Convert.ToChar(Console.ReadLine());
                     if (answer == 's' || answer == 'S')

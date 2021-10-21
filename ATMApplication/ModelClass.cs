@@ -8,8 +8,11 @@ namespace ATMApplication
     {
         public int Mode { get; set; }
         public int Money { get; set; }
-        public int UnityCentena { get; set; }
-        public int UnityMil { get; set; }
+        public int UnityHundred { get; set; }
+        public int UnityTwoHundred { get; set; }
+        public int UnityFiveHundred { get; set; }
+        public int UnityThousand { get; set; }
+        public int Unity { get; set; }
         public double Total { get; set; }
         public IMethodMode method;
         public ModelClass()
@@ -26,6 +29,7 @@ namespace ATMApplication
             switch (mode.Mode)
             {
                 case (int)ModelEnum.Efficient:
+                    method = new ModeEfficient();
                     break;
                 case (int)ModelEnum.Mode200and1000:
                     method = new Mode200and1000();
