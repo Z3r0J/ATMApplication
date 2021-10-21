@@ -5,7 +5,7 @@ namespace ATMApplication
     public class ModeEfficient : ModelClass, IMethodMode
     {
         ModelClass model = new ModelClass();
-        MetodosRetiros metodosRetiros = new MetodosRetiros();
+        MethodWithDraw methodWithDraw = new MethodWithDraw();
         public void Withdraw()
         {
             try
@@ -34,8 +34,8 @@ namespace ATMApplication
                         {
                             UnityFiveHundred = Convert.ToInt32(Total);
                             model.UnityFiveHundred = UnityFiveHundred;
-                            Console.WriteLine(metodosRetiros.MensajeFinal(model));
-                            metodosRetiros.SeguirRetirando();
+                            Console.WriteLine(methodWithDraw.MensajeFinal(model));
+                            methodWithDraw.SeguirRetirando();
                         }
                         else
                         {
@@ -66,8 +66,8 @@ namespace ATMApplication
                                             model.UnityTwoHundred = UnityTwoHundred;
                                             UnityHundred = Convert.ToInt32(divideMoney[1]) % 2;
                                             model.UnityHundred = UnityHundred;
-                                            Console.WriteLine(metodosRetiros.MensajeFinal(model));
-                                            metodosRetiros.SeguirRetirando();
+                                            Console.WriteLine(methodWithDraw.MensajeFinal(model));
+                                            methodWithDraw.SeguirRetirando();
                                         }
                                     }
                                     else
@@ -76,8 +76,8 @@ namespace ATMApplication
                                         Total = Convert.ToDouble(total) / 200;
                                         UnityTwoHundred = Convert.ToInt32(Total);
                                         model.UnityTwoHundred = UnityTwoHundred;
-                                        Console.WriteLine(metodosRetiros.MensajeFinal(model));
-                                        metodosRetiros.SeguirRetirando();
+                                        Console.WriteLine(methodWithDraw.MensajeFinal(model));
+                                        methodWithDraw.SeguirRetirando();
                                     }
                                 }
                             }
@@ -87,8 +87,8 @@ namespace ATMApplication
                     {
                         UnityThousand = Convert.ToInt32(Total);
                         model.UnityThousand = UnityThousand;
-                        Console.WriteLine(metodosRetiros.MensajeFinal(model));
-                        metodosRetiros.SeguirRetirando();
+                        Console.WriteLine(methodWithDraw.MensajeFinal(model));
+                        methodWithDraw.SeguirRetirando();
                     }
                 }
             }

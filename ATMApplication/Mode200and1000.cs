@@ -5,7 +5,7 @@ namespace ATMApplication
     public class Mode200and1000: ModelClass,IMethodMode
     {
         ModelClass model = new ModelClass();
-        MetodosRetiros metodosRetiros = new MetodosRetiros();
+        MethodWithDraw methodWithDraw = new MethodWithDraw();
         public void Withdraw()
         {
             try
@@ -29,6 +29,14 @@ namespace ATMApplication
                     UnityThousand = Convert.ToInt32(divideMoney[0]);
                     UnityTwoHundred = Convert.ToInt32(divideMoney[1]);
                 }
+                else
+                {
+                    UnityThousand = Convert.ToInt32(Total);
+                    model.UnityThousand = UnityThousand;
+                    Console.WriteLine(methodWithDraw.MensajeFinal(model));
+                    methodWithDraw.SeguirRetirando();
+
+                }
                 if (UnityTwoHundred.ToString().Length > 1)
                 {
                     Console.WriteLine("Solo se admiten papeletas de 1000 y 200");
@@ -42,24 +50,24 @@ namespace ATMApplication
                     {
                         model.UnityThousand = UnityThousand;
                         model.UnityTwoHundred = UnityTwoHundred;
-                        Console.WriteLine(metodosRetiros.MensajeFinal(model));
-                        metodosRetiros.SeguirRetirando();
+                        Console.WriteLine(methodWithDraw.MensajeFinal(model));
+                        methodWithDraw.SeguirRetirando();
                     }
 
                     else if (UnityTwoHundred % 2 == 0 && UnityThousand > 0)
                     {
                         model.UnityThousand = UnityThousand;
                         model.UnityTwoHundred = UnityTwoHundred;
-                        Console.WriteLine(metodosRetiros.MensajeFinal(model));
-                        metodosRetiros.SeguirRetirando();
+                        Console.WriteLine(methodWithDraw.MensajeFinal(model));
+                        methodWithDraw.SeguirRetirando();
                     }
 
                     else if (UnityThousand == 0 && UnityTwoHundred % 2 == 0)
                     {
                         model.UnityThousand = UnityThousand;
                         model.UnityTwoHundred = UnityTwoHundred;
-                        Console.WriteLine(metodosRetiros.MensajeFinal(model));
-                        metodosRetiros.SeguirRetirando();
+                        Console.WriteLine(methodWithDraw.MensajeFinal(model));
+                        methodWithDraw.SeguirRetirando();
                     }
                     else
                     {

@@ -2,7 +2,7 @@
 
 namespace ATMApplication
 {
-    public class MetodosRetiros : ModelClass
+    public class MethodWithDraw : ModelClass
     {
         public IMethodMode mode;
         public string MensajeFinal(ModelClass model)

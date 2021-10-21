@@ -7,7 +7,7 @@ namespace ATMApplication
     public class Mode500and100 : ModelClass, IMethodMode
     {
         ModelClass model = new ModelClass();
-        MetodosRetiros metodosRetiros = new MetodosRetiros();
+        MethodWithDraw methodWithDraw = new MethodWithDraw();
         public void Withdraw()
         {
             try
@@ -31,6 +31,14 @@ namespace ATMApplication
                     UnityFiveHundred = Convert.ToInt32(divideMoney[0]);
                     UnityHundred = Convert.ToInt32(divideMoney[1]);
                 }
+                else
+                {
+                    UnityFiveHundred = Convert.ToInt32(Total);
+                    model.UnityFiveHundred = UnityFiveHundred;
+                    Console.WriteLine(methodWithDraw.MensajeFinal(model));
+                    methodWithDraw.SeguirRetirando();
+
+                }
                 if (UnityHundred%2==1 || UnityHundred.ToString().Length > 1)
                 {
                     Console.WriteLine("Solo se admiten papeletas de 100 y 500");
@@ -43,24 +51,24 @@ namespace ATMApplication
                     {
                         model.UnityFiveHundred = UnityFiveHundred;
                         model.UnityHundred = UnityHundred/2;
-                        Console.WriteLine(metodosRetiros.MensajeFinal(model));
-                        metodosRetiros.SeguirRetirando();
+                        Console.WriteLine(methodWithDraw.MensajeFinal(model));
+                        methodWithDraw.SeguirRetirando();
                     }
 
                     else if (UnityHundred % 2 == 0 && UnityFiveHundred > 0)
                     {
                         model.UnityFiveHundred = UnityFiveHundred;
                         model.UnityHundred = UnityHundred/2;
-                        Console.WriteLine(metodosRetiros.MensajeFinal(model));
-                        metodosRetiros.SeguirRetirando();
+                        Console.WriteLine(methodWithDraw.MensajeFinal(model));
+                        methodWithDraw.SeguirRetirando();
                     }
 
                     else if (UnityFiveHundred == 0 && UnityHundred % 2 == 0)
                     {
                         model.UnityFiveHundred = UnityFiveHundred;
                         model.UnityHundred = UnityHundred/2;
-                        Console.WriteLine(metodosRetiros.MensajeFinal(model));
-                        metodosRetiros.SeguirRetirando();
+                        Console.WriteLine(methodWithDraw.MensajeFinal(model));
+                        methodWithDraw.SeguirRetirando();
                     }
                     else
                     {
