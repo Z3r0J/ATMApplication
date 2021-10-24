@@ -20,7 +20,7 @@ namespace ATMApplication
                 switch (option)
                 {
                     case (int)InitialMenu.Mode:
-                        modeMenu.DispensingMenu();
+                        modeMenu.PrintMenu();
                         break;
                     case (int)InitialMenu.Withdraw:
                         model.ModeDispensing(model);
@@ -37,7 +37,9 @@ namespace ATMApplication
             }
             catch (Exception ex)
             {
-
+                Console.WriteLine("Inserta una opcion valida");
+                Console.ReadKey();
+                PrintMenu();
             }
 
         }

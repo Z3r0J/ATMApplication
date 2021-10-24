@@ -4,15 +4,14 @@ namespace ATMApplication
 {
     public class DispensingModeMenu
     {
-        public void DispensingMenu()
-        {
+         public void PrintMenu(){
             ModelClass model = new ModelClass();
            
             try
             {
-                Console.WriteLine("1 - Efficient Mode (Defect Mode) 100 , 200 , 500 , 1000\n" +
-               "2 - 200 & 1000\n" +
-               "3 - 100 & 500");
+                Console.WriteLine("1 - 200 & 1000\n" +
+               "2 - 100 & 500\n" +
+               "3 - Efficient Mode (Defect Mode) 100 , 200 , 500 , 1000\n");
                 int option = Convert.ToInt32(Console.ReadLine());
 
                 switch (option)
@@ -40,7 +39,10 @@ namespace ATMApplication
             catch (Exception ex)
             {
 
-                throw;
+                Console.WriteLine("Inserta una opcion valida.");
+                Console.ReadKey();
+                Console.Clear();
+                PrintMenu();
             }
 
         }
