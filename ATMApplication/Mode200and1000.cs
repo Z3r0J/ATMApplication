@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 namespace ATMApplication
 {
     public class Mode200and1000: ModelClass,IMethodMode

@@ -1,4 +1,4 @@
-﻿namespace ATMApplication
+namespace ATMApplication
 {
     enum ModelEnum
     {
