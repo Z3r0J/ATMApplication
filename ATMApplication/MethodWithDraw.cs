@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace ATMApplication
 {
@@ -17,64 +17,64 @@ namespace ATMApplication
 
             if (UnityThousand != 0 && UnityFiveHundred != 0 && UnityTwoHundred != 0 && UnityHundred != 0)
             {
-                message = $"It gave you {UnityThousand} bill of 1000, {UnityFiveHundred} bill of 500, {UnityTwoHundred} bill of 200, {UnityHundred} bill of 100";
+                message = $"El cajero dio {UnityThousand} de 1000, {UnityFiveHundred} de 500, {UnityTwoHundred} de 200, {UnityHundred} de 100";
             }
             else if (UnityThousand != 0 && UnityFiveHundred != 0 && UnityTwoHundred != 0 && UnityHundred == 0)
             {
-                message = $"It gave you {UnityThousand} bill of 1000, {UnityFiveHundred} bill of 500, {UnityTwoHundred / 2} bill of 200";
+                message = $"El cajero dio {UnityThousand} de 1000, {UnityFiveHundred} de 500, {UnityTwoHundred / 2} de 200";
             }
             else if (UnityThousand != 0 && UnityFiveHundred != 0 && UnityTwoHundred == 0 && UnityHundred != 0)
             {
-                message = $"It gave you {UnityThousand} bill of 1000, {UnityFiveHundred} bill of 500 y {UnityHundred} bill of 100";
+                message = $"El cajero dio {UnityThousand} de 1000, {UnityFiveHundred} de 500 y {UnityHundred} de 100";
             }
             else if (UnityThousand != 0 && UnityTwoHundred != 0 && UnityHundred != 0 && UnityFiveHundred == 0)
             {
-                message = $"It gave you {UnityThousand} bill of 1000, {UnityTwoHundred} bill of 200, {UnityHundred} bill of 100";
+                message = $"El cajero dio {UnityThousand} de 1000, {UnityTwoHundred} de 200, {UnityHundred} de 100";
 
             }
             else if (UnityThousand != 0 && UnityFiveHundred != 0 && UnityTwoHundred == 0 && UnityHundred == 0)
             {
-                message = $"It gave you {UnityThousand} bill of 1000, {UnityFiveHundred} bill of 500";
+                message = $"El cajero dio {UnityThousand} de 1000, {UnityFiveHundred} de 500";
             }
             else if (UnityThousand != 0 && UnityFiveHundred == 0 && UnityTwoHundred != 0 && UnityHundred == 0)
             {
-                message = $"It gave you {UnityThousand} bill of 1000, {UnityTwoHundred / 2} bill of 200";
+                message = $"El cajero dio {UnityThousand} de 1000, {UnityTwoHundred / 2} de 200";
             }
             else if (UnityThousand != 0 && UnityFiveHundred == 0 && UnityTwoHundred == 0 && UnityHundred != 0)
             {
-                message = $"It gave you {UnityThousand} bill of 1000, {UnityHundred} bill of 100";
+                message = $"El cajero dio {UnityThousand} de 1000, {UnityHundred} de 100";
             }
             else if (UnityFiveHundred != 0 && UnityTwoHundred != 0 && UnityThousand == 0 && UnityHundred == 0)
             {
-                message = $"It gave you {UnityFiveHundred} bill of 500, {UnityTwoHundred / 2} bill of 200";
+                message = $"El cajero dio {UnityFiveHundred} de 500, {UnityTwoHundred / 2} de 200";
             }
             else if (UnityFiveHundred != 0 && UnityTwoHundred != 0 && UnityThousand == 0 && UnityHundred != 0)
             {
-                message = $"It gave you {UnityFiveHundred} bill of 500, {UnityTwoHundred} bill of 200 y {UnityHundred} bill of 100";
+                message = $"El cajero dio {UnityFiveHundred} de 500, {UnityTwoHundred} de 200 y {UnityHundred} de 100";
             }
             else if (UnityFiveHundred != 0 && UnityTwoHundred == 0 && UnityThousand == 0 && UnityHundred != 0)
             {
-                message = $"It gave you {UnityFiveHundred} bill of 500, {UnityHundred} bill of 100";
+                message = $"El cajero dio {UnityFiveHundred} de 500, {UnityHundred} de 100";
             }
             else if (UnityFiveHundred == 0 && UnityTwoHundred != 0 && UnityThousand == 0 && UnityHundred != 0)
             {
-                message = $"It gave you {UnityTwoHundred} bill of 200 y {UnityHundred} bill of 100";
+                message = $"El cajero dio {UnityTwoHundred} de 200 y {UnityHundred} de 100";
             }
             else if (UnityFiveHundred != 0 && UnityTwoHundred == 0 && UnityThousand == 0 && UnityHundred == 0)
             {
-                message = $"It gave you {UnityFiveHundred} bill of 500";
+                message = $"El cajero dio {UnityFiveHundred} de 500";
             }
             else if (UnityFiveHundred == 0 && UnityTwoHundred != 0 && UnityThousand == 0 && UnityHundred == 0)
             {
-                message = $"It gave you {UnityTwoHundred / 2} bill of 200";
+                message = $"El cajero dio {UnityTwoHundred / 2} de 200";
             }
             else if (UnityFiveHundred == 0 && UnityTwoHundred == 0 && UnityThousand == 0 && UnityHundred != 0)
             {
-                message = $"It gave you {UnityHundred} bill of 100";
+                message = $"El cajero dio {UnityHundred} de 100";
             }
             else if (UnityFiveHundred == 0 && UnityTwoHundred == 0 && UnityThousand != 0 && UnityHundred == 0)
             {
-                message = $"It gave you {UnityThousand} bill of 1000";
+                message = $"El cajero dio {UnityThousand} de 1000";
             }
             return message;
         }
