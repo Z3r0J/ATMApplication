@@ -2,8 +2,9 @@
 {
     enum ModeDispensing
     {
-        EfficientMode=1,
-        TwoHundredandOneThousand,
+        TwoHundredandOneThousand=1,
         OneHundredandFiveHundred,
+        EfficientMode,
+        GoBack
     }
 }

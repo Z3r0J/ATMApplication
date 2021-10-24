@@ -11,6 +11,7 @@ namespace ATMApplication
         {
             try
             {
+
                 DispensingModeMenu modeMenu = new DispensingModeMenu();
                 ModelClass model = new ModelClass(Repositorio.instacia.mode);
                 Console.Clear();
@@ -20,24 +21,29 @@ namespace ATMApplication
                 switch (option)
                 {
                     case (int)InitialMenu.Mode:
-                        modeMenu.DispensingMenu();
+                        modeMenu.PrintMenu();
                         break;
                     case (int)InitialMenu.Withdraw:
                         model.ModeDispensing(model);
                         break;
                     case (int)InitialMenu.Exit:
-                        Console.WriteLine("Muchas gracias por usar nuestra aplicacion.");
+                        Console.WriteLine("Thanks for using The ATM Application");
                         Console.ReadKey();
                         Environment.Exit(0);
                         break;
                     default:
+                        Console.WriteLine("Please Insert a valid option.");
+                        Console.ReadKey();
+                        PrintMenu();
                         break;
                 }
 
             }
             catch (Exception ex)
             {
-
+                Console.WriteLine("Please Insert a valid option.");
+                Console.ReadKey();
+                PrintMenu();
             }
 
         }
