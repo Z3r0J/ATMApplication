@@ -11,12 +11,16 @@ namespace ATMApplication
             try
             {
                 model.Mode = 2;
+                Console.ForegroundColor = ConsoleColor.Gray;
                 Console.WriteLine("Insert the amount to Withdraw");
+                Console.ForegroundColor = ConsoleColor.DarkBlue;
+                Console.Write("> ");
+                Console.ForegroundColor = ConsoleColor.Cyan;
                 Money = Convert.ToInt32(Console.ReadLine());
 
                 // Validamos si se introdujo una cantidad menor a 100
                 if (Money < 100)
-                {
+                {Console.ForegroundColor = ConsoleColor.DarkRed;
                     Console.Write("Solo aceptamos retiro de papeleta de 100 y de 500");
                     Console.ReadKey();
                     Repositorio.instacia.menu.PrintMenu();
@@ -46,7 +50,7 @@ namespace ATMApplication
                 // por 500 estos nos da 3.1 y al hacer la validacion de que el residuo de las unidades de 100 nos da 1 arrojamos el mensaje de que solo es papeletas de 100 y 500
 
                 if (UnityHundred % 2 == 1 || UnityHundred.ToString().Length > 1)
-                {
+                {Console.ForegroundColor = ConsoleColor.DarkRed;
                     Console.WriteLine("Solo se admiten papeletas de 100 y 500");
                     Console.ReadKey();
                     Repositorio.instacia.menu.PrintMenu();
@@ -72,7 +76,7 @@ namespace ATMApplication
                         methodWithDraw.SeguirRetirando();
                     }
                     else
-                    {
+                    {Console.ForegroundColor = ConsoleColor.DarkRed;
                         Console.WriteLine("No se puede dar de esta cantidad solo papeleta de 500 y 100");
                         Console.ReadKey();
                         Repositorio.instacia.menu.PrintMenu();
@@ -80,7 +84,7 @@ namespace ATMApplication
                 }
             }
             catch (Exception)
-            {
+            {Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.WriteLine("Please Insert a valid option.");
                 Console.Clear();
                 Repositorio.instacia.menu.PrintMenu();

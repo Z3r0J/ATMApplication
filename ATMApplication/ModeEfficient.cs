@@ -11,13 +11,17 @@ namespace ATMApplication
             try
             {
                 model.Mode = 3;
-
+                Console.ForegroundColor = ConsoleColor.Gray;
                 Console.WriteLine("Insert the amount to withdraw: ");
+                Console.ForegroundColor = ConsoleColor.DarkBlue;
+                Console.Write("> ");
+                Console.ForegroundColor = ConsoleColor.Cyan;
                 Money = Convert.ToInt32(Console.ReadLine());
 
                 // Validamos si se introdujo una cantidad menor a 100
                 if (Money < 100)
                 {
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
                     Console.WriteLine("No se puede retirar esta cantidad.");
                 }
                 // Dividimos la cantidad insertada por la denominacion mayor aceptada
@@ -116,7 +120,7 @@ namespace ATMApplication
             }
             catch (Exception ex)
             {
-
+                Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.WriteLine("Please Insert a valid option..");
                 Console.ReadKey();
                 Repositorio.instacia.menu.PrintMenu();

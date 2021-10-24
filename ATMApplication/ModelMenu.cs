@@ -2,8 +2,9 @@
 {
     enum ModelEnum
     {
-        Efficient = 1,
-        Mode200and1000,
-        Mode500and100
+        Mode200and1000=1,
+        Mode500and100,
+        Efficient
+
     }
 }

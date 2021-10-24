@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Runtime;
 namespace ATMApplication
 {
     public class Mode200and1000: ModelClass,IMethodMode
@@ -11,12 +10,18 @@ namespace ATMApplication
             try
             {
                 model.Mode = 1;
-                Console.WriteLine("Insert the amount to Withdraw");
+                Console.ForegroundColor = ConsoleColor.Gray;
+                Console.WriteLine("Insert the amount to Withdraw: ");
+                Console.ForegroundColor = ConsoleColor.DarkBlue;
+                Console.Write("> ");
+                Console.ForegroundColor = ConsoleColor.Cyan;
                 Money = Convert.ToInt32(Console.ReadLine());
 
+                Console.ForegroundColor = ConsoleColor.White;
                 // Validamos si se introdujo una cantidad menor a 200
                 if (Money < 200)
                 {
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
                     Console.Write("Solo se acepta papeleta de 200 y 1000");
                     Console.ReadKey();
                     Repositorio.instacia.menu.PrintMenu();
@@ -78,6 +83,7 @@ namespace ATMApplication
                     //Aqui damos un mensaje cuando no se puede arrojar esa cantidad ejemplo si insertan 1300 pues este mensaje debe darlo.
                     else
                     {
+                        Console.ForegroundColor = ConsoleColor.DarkRed;
                         Console.WriteLine("No se puede dar de esta cantidad solo papeleta de 200 y 1000");
                         Console.ReadKey();
                         Repositorio.instacia.menu.PrintMenu();
@@ -86,6 +92,7 @@ namespace ATMApplication
             }
             catch (Exception)
             {
+                Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.WriteLine("Please Insert a valid option.");
                 Console.Clear();
                 Repositorio.instacia.menu.PrintMenu();
