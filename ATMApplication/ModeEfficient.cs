@@ -117,7 +117,7 @@ namespace ATMApplication
             catch (Exception ex)
             {
 
-                Console.WriteLine("Ingrese una opcion valida.");
+                Console.WriteLine("Please Insert a valid option..");
                 Console.ReadKey();
                 Repositorio.instacia.menu.PrintMenu();
             }

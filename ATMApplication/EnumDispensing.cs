@@ -5,5 +5,6 @@
         TwoHundredandOneThousand=1,
         OneHundredandFiveHundred,
         EfficientMode,
+        GoBack
     }
 }

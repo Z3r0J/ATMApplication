@@ -86,7 +86,7 @@ namespace ATMApplication
             }
             catch (Exception)
             {
-                Console.WriteLine("Inserta una opcion valida");
+                Console.WriteLine("Please Insert a valid option.");
                 Console.Clear();
                 Repositorio.instacia.menu.PrintMenu();
             }
