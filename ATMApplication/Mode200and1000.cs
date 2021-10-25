@@ -93,7 +93,7 @@ namespace ATMApplication
             catch (Exception)
             {
                 Console.ForegroundColor = ConsoleColor.DarkRed;
-                Console.WriteLine("Please Insert a valid option.");
+                Console.WriteLine("Please insert a integer value.");
                 Console.Clear();
                 Repositorio.instacia.menu.PrintMenu();
             }

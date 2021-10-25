@@ -9,6 +9,7 @@ namespace ATMApplication
            
             try
             {
+                Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine("1 - 200 & 1000\n" +
                "2 - 100 & 500\n" +
