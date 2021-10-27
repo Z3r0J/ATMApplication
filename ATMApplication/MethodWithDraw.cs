@@ -83,6 +83,8 @@ namespace ATMApplication
         {
             ModelClass model = new ModelClass();
 
+
+
             Console.WriteLine("Do you wanna continue withdraw? (Y/N)");
             char answer = Convert.ToChar(Console.ReadLine());
             if (answer == 'y' || answer == 'Y')
@@ -92,7 +94,7 @@ namespace ATMApplication
                 model.UnityTwoHundred = 0;
                 model.UnityHundred = 0;
 
-                switch (Mode)
+                switch (Repositorio.instacia.mode)
                 {
                     case (int)ModelEnum.Efficient:
                         mode = new ModeEfficient();

@@ -22,7 +22,8 @@ namespace ATMApplication
                 if (Money < 100)
                 {
                     Console.ForegroundColor = ConsoleColor.DarkRed;
-                    Console.WriteLine("No se puede retirar esta cantidad.");
+                    Console.WriteLine("No se puede retirar esta cantidad solo papeleta, de 100, 200, 500 y 1000.");
+                    methodWithDraw.SeguirRetirando();
                 }
                 // Dividimos la cantidad insertada por la denominacion mayor aceptada
                 Total = Convert.ToDouble(Money) / 1000;
@@ -53,8 +54,7 @@ namespace ATMApplication
                         if (divideMoney[1].Length > 1)
                         {
                             Console.WriteLine("No puede insertar esta cantidad.");
-                            Console.ReadKey();
-                            Repositorio.instacia.menu.PrintMenu();
+                            methodWithDraw.SeguirRetirando();
                         }
                         else
                         {

@@ -22,8 +22,7 @@ namespace ATMApplication
                 if (Money < 100)
                 {Console.ForegroundColor = ConsoleColor.DarkRed;
                     Console.Write("Solo aceptamos retiro de papeleta de 100 y de 500");
-                    Console.ReadKey();
-                    Repositorio.instacia.menu.PrintMenu();
+                    methodWithDraw.SeguirRetirando();
                 }
 
                 // Dividimos la cantidad insertada por la denominacion mayor aceptada
@@ -52,8 +51,7 @@ namespace ATMApplication
                 if (UnityHundred % 2 == 1 || UnityHundred.ToString().Length > 1)
                 {Console.ForegroundColor = ConsoleColor.DarkRed;
                     Console.WriteLine("Solo se admiten papeletas de 100 y 500");
-                    Console.ReadKey();
-                    Repositorio.instacia.menu.PrintMenu();
+                    methodWithDraw.SeguirRetirando();
                 }
 
 
@@ -79,7 +77,7 @@ namespace ATMApplication
                     {Console.ForegroundColor = ConsoleColor.DarkRed;
                         Console.WriteLine("No se puede dar de esta cantidad solo papeleta de 500 y 100");
                         Console.ReadKey();
-                        Repositorio.instacia.menu.PrintMenu();
+                        methodWithDraw.SeguirRetirando();
                     }
                 }
             }

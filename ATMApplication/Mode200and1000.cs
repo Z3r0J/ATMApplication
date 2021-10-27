@@ -23,8 +23,7 @@ namespace ATMApplication
                 {
                     Console.ForegroundColor = ConsoleColor.DarkRed;
                     Console.Write("Solo se acepta papeleta de 200 y 1000");
-                    Console.ReadKey();
-                    Repositorio.instacia.menu.PrintMenu();
+                    methodWithDraw.SeguirRetirando();
                 }
 
 
@@ -55,8 +54,7 @@ namespace ATMApplication
                 if (UnityTwoHundred.ToString().Length > 1)
                 {
                     Console.WriteLine("Solo se admiten papeletas de 1000 y 200");
-                    Console.ReadKey();
-                    Repositorio.instacia.menu.PrintMenu();
+                    methodWithDraw.SeguirRetirando();
                 }
                 else
                 {
@@ -85,8 +83,7 @@ namespace ATMApplication
                     {
                         Console.ForegroundColor = ConsoleColor.DarkRed;
                         Console.WriteLine("No se puede dar de esta cantidad solo papeleta de 200 y 1000");
-                        Console.ReadKey();
-                        Repositorio.instacia.menu.PrintMenu();
+                        methodWithDraw.SeguirRetirando();
                     }
                 }
             }
